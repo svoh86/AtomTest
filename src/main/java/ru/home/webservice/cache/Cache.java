@@ -11,8 +11,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class Cache {
     private final Map<String, String> cache = new ConcurrentHashMap<>();
 
-    public void put(String key, String data) {
-        cache.putIfAbsent(key, data);
+    public boolean put(String key, String data) {
+       return cache.putIfAbsent(key, data) == null;
     }
 
     public Optional<String> get(String key) {
