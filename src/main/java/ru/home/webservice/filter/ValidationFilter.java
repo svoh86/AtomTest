@@ -47,6 +47,6 @@ public class ValidationFilter implements Filter {
         PrintWriter writer = resp.getWriter();
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
         requestDispatcher.include(req, resp);
-        writer.write(message.toString());
+        writer.write(message.getMessage());
     }
 }
